@@ -1,0 +1,5 @@
+{
+    "jwtPrivateKey": "12345",
+    "db": "mongodb://localhost/StudentHub",
+    "environment": "default"
+  }

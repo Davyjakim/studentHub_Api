@@ -1,0 +1,7 @@
+{
+ "jwtPrivateKey": "Private_Key",
+ "db": "DB_URL",
+  "environment": "development"
+
+}
+
