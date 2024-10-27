@@ -29,7 +29,8 @@ router.post("/login", async (req, res) => {
   }
 
   const token = user.generateAuthToken();
-  res.cookie("token", token, { maxAge: 28800000, httpOnly: false });
+  res.cookie("token", token, { maxAge: 28800000, httpOnly: false, sameSite: 'None', secure: true });
+
   res.send('sign up sucessfull');
 
   console.log(token)
