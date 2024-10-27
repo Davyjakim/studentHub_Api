@@ -6,7 +6,7 @@ require(`dotenv`).config({ path: `./config/.env` });
 const config = require("config");
 
 const corsOptions = {
-  origin: "https://studenthubapi-production.up.railway.app", 
+  origin: "https://student-hub-lime.vercel.app", 
   credentials: true,
 };
 
