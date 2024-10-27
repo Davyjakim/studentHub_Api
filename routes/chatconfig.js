@@ -5,7 +5,7 @@ const { Messages } = require("../models/message");
 module.exports = function (Chatserver) {
   const io = new Server(Chatserver, {
     cors: {
-      origin: "http://localhost:3000", // Corrected the URL
+      origin: "https://studenthubapi-production.up.railway.app", // Corrected the URL
       methods: ["GET", "POST"],
     },
   });

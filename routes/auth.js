@@ -30,7 +30,9 @@ router.post("/login", async (req, res) => {
 
   const token = user.generateAuthToken();
   res.cookie("token", token, { maxAge: 28800000, httpOnly: false });
-  res.send(token);
+  res.send('sign up sucessfull');
+
+  console.log(token)
 });
 
 function validate(user) {

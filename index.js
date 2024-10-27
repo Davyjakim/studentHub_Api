@@ -6,13 +6,13 @@ require(`dotenv`).config({ path: `./config/.env` });
 const config = require("config");
 
 const corsOptions = {
-  origin: "http://localhost:3000", // Replace with your frontend URL
-  credentials: true, // This allows cookies and other credentials to be sent
+  origin: "https://studenthubapi-production.up.railway.app", 
+  credentials: true,
 };
 
 const app = express();
-app.use(cors(corsOptions)); // Add this to handle CORS for the Express app
-app.use(express.json()); // To parse incoming JSON requests
+app.use(cors(corsOptions)); 
+app.use(express.json()); 
 app.use(cookieParser(config.get("jwtPrivateKey")));
 const Chatserver = http.createServer(app);
 
