@@ -29,7 +29,12 @@ router.post("/login", async (req, res) => {
   }
 
   const token = user.generateAuthToken();
-  res.cookie("token", token, { maxAge: 28800000, httpOnly: false, sameSite: 'None', secure: true });
+  res.cookie("token", token, {
+    maxAge: 28800000,           
+    httpOnly: true,            
+    secure: true,              
+    sameSite: "None",          
+  });
 
   res.send('sign up sucessfull');
 
