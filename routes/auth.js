@@ -33,8 +33,8 @@ router.post("/login", async (req, res) => {
   res.cookie("token", token, {
     maxAge: 28800000, // 8 hours
     httpOnly: true,
-    sameSite: "none", // Required for cross-origin cookies
-    secure: true, // Ensures cookies are only sent over HTTPS
+    sameSite: "none",
+    secure: true, 
   });
 
   res.send("sign up sucessfull");

@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 require(`dotenv`).config({ path: `./config/.env` });
 const config = require("config");
 
-const client_url= 'https://student-hub-lime.vercel.app'
+const client_url= ['https://student-hub-lime.vercel.app','https://dazzling-torte-b59ff1.netlify.app/']
 
 const corsOptions = {
   origin: client_url, 
