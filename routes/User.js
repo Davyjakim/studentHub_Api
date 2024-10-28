@@ -46,8 +46,13 @@ router.post("/signup", async (req, res) => {
 });
 
 router.get("/getme", auth, (req, res) => {
-  const user = req.user;
-  res.status(200).send(user);
+  console.log("User data in /getme route:", req.user); // Confirm req.user has data
+  
+  if (!req.user) {
+      return res.status(401).send("User not authenticated.");
+  }
+  
+  res.status(200).send(req.user);
 });
 // get users except me 
 router.get("/getUsers", auth, async (req, res) => {
