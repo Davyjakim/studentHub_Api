@@ -6,7 +6,7 @@ const { Friends } = require("../models/friends");
 const { Messages } = require("../models/message");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
-
+const config = require("config");
 router.post("/signup", async (req, res) => {
   const { error } = validate(req.body);
   if (error) {
