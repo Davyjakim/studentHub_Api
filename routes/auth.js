@@ -33,7 +33,7 @@ router.post("/login", async (req, res) => {
   res.cookie("token", token, {
     maxAge: 28800000, // 8 hours
     httpOnly: true,
-    sameSite: "none",
+    sameSite: "lax",
     secure: true, 
   });
 
