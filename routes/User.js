@@ -4,6 +4,7 @@ const express = require("express");
 const { auth } = require("../middleware/auth");
 const { Friends } = require("../models/friends");
 const { Messages } = require("../models/message");
+const jwt = require("jsonwebtoken");
 const router = express.Router();
 
 router.post("/signup", async (req, res) => {
