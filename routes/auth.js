@@ -12,6 +12,7 @@ router.post("/login", async (req, res) => {
   if (error) {
     res.status(400).send(error.message);
     return;
+
   }
   let user = await User.findOne({
     $or: [{ email: req.body.emailorName }, { name: req.body.emailorName }],
@@ -33,9 +34,7 @@ router.post("/login", async (req, res) => {
   const token = user.generateAuthToken();
   res.cookie("token", token, {
     maxAge: 28800000,           // 8 hours
-    httpOnly: true,             // Prevents JavaScript access
-    secure: true,               // Requires HTTPS
-    sameSite: "None",           // Allows cross-origin
+    httpOnly: false,            
   });
   res.send('sign up sucessfull');
 

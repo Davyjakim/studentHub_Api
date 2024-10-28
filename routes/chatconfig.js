@@ -2,10 +2,10 @@ const { Server } = require("socket.io");
 const { authMessage } = require("../middleware/authMessage");
 const { User, validate } = require("../models/User");
 const { Messages } = require("../models/message");
-module.exports = function (Chatserver) {
+module.exports = function (Chatserver,client_url) {
   const io = new Server(Chatserver, {
     cors: {
-      origin: "https://student-hub-lime.vercel.app", // Corrected the URL
+      origin: client_url, // Corrected the URL
       methods: ["GET", "POST"],
     },
   });

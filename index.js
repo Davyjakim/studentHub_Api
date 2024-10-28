@@ -5,8 +5,10 @@ const cookieParser = require("cookie-parser");
 require(`dotenv`).config({ path: `./config/.env` });
 const config = require("config");
 
+const client_url= 'https://student-hub-lime.vercel.app'
+
 const corsOptions = {
-  origin: "https://student-hub-lime.vercel.app", 
+  origin: client_url, 
   credentials: true,
 };
 
@@ -18,7 +20,7 @@ const Chatserver = http.createServer(app);
 
 
 
-require("./routes/chatconfig")(Chatserver);
+require("./routes/chatconfig")(Chatserver,client_url);
 
 
 require("./startup/db")();
