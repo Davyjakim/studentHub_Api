@@ -45,8 +45,10 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-router.get("/getme", auth, (req, res) => {
-  const user = req.user;
+router.get("/getme", (req, res) => {
+  const token = req.cookies.token
+  const decoded = jwt.verify(token, config.get("jwtPrivateKey"));
+  const user = decoded;
   res.status(200).send(user);
 });
 // get users except me 
