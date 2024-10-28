@@ -4,9 +4,8 @@ const express = require("express");
 const { auth } = require("../middleware/auth");
 const { Friends } = require("../models/friends");
 const { Messages } = require("../models/message");
-const jwt = require("jsonwebtoken");
 const router = express.Router();
-const config = require("config");
+
 router.post("/signup", async (req, res) => {
   const { error } = validate(req.body);
   if (error) {
@@ -46,10 +45,8 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-router.get("/getme", (req, res) => {
-  const token = req.cookies.token
-  const decoded = jwt.verify(token, config.get("jwtPrivateKey"));
-  const user = decoded;
+router.get("/getme", auth, (req, res) => {
+  const user = req.user;
   res.status(200).send(user);
 });
 // get users except me 
