@@ -32,15 +32,12 @@ const UserSchema = new mongoose.Schema({
       id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
-        required: true,
       },
       ChatRoom: {
         type: Number,
-        required: true,
       },
       friendName: {
         type: String,
-        required: true,
       },
       profilePicture: { data: Buffer, contentType: String },
     },
