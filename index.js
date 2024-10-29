@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 require(`dotenv`).config({ path: `./config/.env` });
 const config = require("config");
 
-const client_url= 'https://student-hub-lime.vercel.app'
+const client_url= 'http://localhost:3000'
 
 const corsOptions = {
   origin: client_url, 

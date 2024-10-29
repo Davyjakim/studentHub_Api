@@ -37,7 +37,6 @@ const UserSchema = new mongoose.Schema({
       ChatRoom: {
         type: Number,
         required: true,
-        unique: true,
       },
       friendName: {
         type: String,
